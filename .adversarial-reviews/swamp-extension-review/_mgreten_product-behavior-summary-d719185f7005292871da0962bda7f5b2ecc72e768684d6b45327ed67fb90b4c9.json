@@ -1,0 +1,22 @@
+{
+  "extension": "@mgreten/product-behavior-summary",
+  "version": "2026.08.23.1",
+  "reviewedAt": "2026-08-23T20:21:53Z",
+  "dimensions": [
+    { "id": "credentials-secrets", "verdict": "pass", "note": "No credentials, network clients, or secret-bearing configuration; strict aggregate input rejects identifier-shaped fields." },
+    { "id": "logging-quality", "verdict": "pass", "note": "Method logs entry and successful persistence without metric contents or other sensitive values." },
+    { "id": "error-handling", "verdict": "pass", "note": "Catalog, schema, provenance, freshness, privacy, authority, and causality failures occur before the sole write." },
+    { "id": "testing-completeness", "verdict": "pass", "note": "Nine tests cover success, catalog ordering, unavailable values, aggregate facets, malformed and identifying inputs, provenance/freshness, bounds, tampering, and retry idempotency." },
+    { "id": "idempotency-resilience", "verdict": "pass", "note": "Equivalent metric sets normalize to caller catalog order and retries replace summary/current with byte-equivalent structured data." },
+    { "id": "api-contracts", "verdict": "na", "note": "No external API calls." },
+    { "id": "resource-management", "verdict": "na", "note": "No external resources, handles, clients, or temporary files." },
+    { "id": "published-surface-hygiene", "verdict": "pass", "note": "Published examples and fixtures contain only synthetic aggregate data and documentation placeholders." },
+    { "id": "schema-strictness", "verdict": "pass", "note": "Input and persisted object schemas are strict; catalog, metrics, dimensions, text, counts, timestamps, authority, and deterministic results are bounded and validated." },
+    { "id": "lifetime-gc", "verdict": "pass", "note": "The sole summary resource declares infinite lifetime and garbageCollection 10." },
+    { "id": "crud-completeness", "verdict": "na", "note": "This is a replaceable current-snapshot evaluator, not an external-resource CRUD lifecycle." },
+    { "id": "preflight-checks", "verdict": "na", "note": "No external mutation; all validation is performed before local persistence." },
+    { "id": "instance-names", "verdict": "pass", "note": "The sole writer targets summary/current and writes the complete declared resource shape." },
+    { "id": "data-access", "verdict": "na", "note": "Deterministic current-snapshot replacement requires no prior-state read." },
+    { "id": "version-upgrades", "verdict": "na", "note": "Initial standalone publication; no prior registry version exists." }
+  ]
+}
