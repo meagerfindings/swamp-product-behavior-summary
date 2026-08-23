@@ -1,0 +1,20 @@
+{
+  "extension": "@mgreten/product-behavior-summary", "version": "2026.08.23.1", "reviewedAt": "2026-08-23T15:06:17Z",
+  "dimensions": [
+    { "id": "credentials-secrets", "verdict": "pass", "note": "Identifier-key scan and strict aggregate contract reject user-level data; no credentials." },
+    { "id": "logging-quality", "verdict": "issue", "note": "summarize has no entry or completion logging." },
+    { "id": "error-handling", "verdict": "pass", "note": "Privacy, catalog, freshness, causality, and deterministic-result checks fail before persistence." },
+    { "id": "testing-completeness", "verdict": "pass", "note": "Tests cover aggregate rates, suppression, allowed facets, ID-like aliases, low cohorts, stale input, causal claims, and practical bounds." },
+    { "id": "idempotency-resilience", "verdict": "pass", "note": "Deterministic summary intentionally replaces the stable current snapshot." },
+    { "id": "api-contracts", "verdict": "na", "note": "No external API calls or data collection." },
+    { "id": "resource-management", "verdict": "na", "note": "No external resources." },
+    { "id": "published-surface-hygiene", "verdict": "pass", "note": "Published examples and fixtures use synthetic aggregate data." },
+    { "id": "schema-strictness", "verdict": "pass", "note": "Persisted contracts are strict; outcome, metric, dimension, key, value, and free-text bounds are explicit." },
+    { "id": "lifetime-gc", "verdict": "pass", "note": "summary declares infinite lifetime and garbageCollection 10." },
+    { "id": "crud-completeness", "verdict": "na", "note": "Current aggregate snapshot model, not CRUD." },
+    { "id": "preflight-checks", "verdict": "na", "note": "No external mutation." },
+    { "id": "instance-names", "verdict": "pass", "note": "The sole writer intentionally targets summary/current with one complete schema." },
+    { "id": "data-access", "verdict": "na", "note": "Current snapshot replacement does not require stored-state reads." },
+    { "id": "version-upgrades", "verdict": "na", "note": "Initial standalone publication." }
+  ]
+}
